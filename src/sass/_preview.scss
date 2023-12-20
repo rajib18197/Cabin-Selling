@@ -1,0 +1,221 @@
+.preview {
+  &__link {
+    &:link,
+    &:visited {
+      display: flex;
+      align-items: center;
+      padding: 1.5rem 1.4rem;
+      transition: all 0.3s;
+      border-right: 1px solid #fff;
+      text-decoration: none;
+    }
+
+    &:hover {
+      background-color: #efebfc;
+      // transform: translateY(-2px);
+    }
+
+    &--active {
+      background-color: #b8b3b3;
+    }
+  }
+
+  &__fig {
+    flex: 0 0 5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    height: 5rem;
+    margin-right: 2rem;
+    position: relative;
+    backface-visibility: hidden;
+
+    &::before {
+      content: "";
+      display: block;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-image: linear-gradient(
+        to right bottom,
+        $color-grad-1,
+        $color-grad-2
+      );
+      opacity: 0.4;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: all 0.3s;
+    }
+  }
+
+  &__data {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 2rem;
+    row-gap: 0.1rem;
+    align-items: center;
+  }
+
+  &__name {
+    grid-column: 1/-1;
+    font-size: 1.45rem;
+    color: $color-primary;
+    text-transform: uppercase;
+    font-weight: 600;
+
+    // This is how text is truncated!
+    text-overflow: ellipsis;
+    max-width: 25rem;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  &__publisher {
+    font-size: 1.15rem;
+    color: $color-grey-dark-2;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  &__user-generated {
+    background-color: darken($color-grey-light-2, 2%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 10rem;
+
+    margin-left: auto;
+    margin-right: 1.75rem;
+
+    svg {
+      height: 1.2rem;
+      width: 1.2rem;
+      fill: $color-primary;
+    }
+  }
+}
+
+.booked {
+  margin: 1rem;
+  padding: 3rem 2rem;
+  box-shadow: 0 0 0 transparent, 0 0 0 transparent,
+    0 0 3rem rgba(76, 103, 150, 0.3);
+  border-radius: 0.3rem;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  &__details {
+    display: grid;
+    grid-template-columns: 10rem max-content max-content max-content max-content;
+    gap: 1rem;
+    justify-content: space-between;
+
+    & > * {
+      font-size: 1.6rem;
+      background-color: #e2e2e2;
+      border-radius: 3rem;
+      padding: 0 1rem;
+      // line-height: normal;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    & > *:last-child {
+      justify-self: end;
+      align-self: end;
+    }
+  }
+
+  &__info {
+    background-color: $color-grey-light-1;
+    padding: 1rem;
+  }
+
+  &__cabin {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  &__img {
+    width: 100%;
+    // height: 23rem;
+    grid-row: 1 / span 3;
+  }
+
+  &__overview {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    font-size: 1.6rem;
+    background-color: #eee;
+    border-radius: 3px;
+    padding: 0 1rem;
+  }
+
+  &__guests,
+  &__price {
+    font-size: 1.6rem;
+    background-color: #eee;
+    border-radius: 3px;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+  }
+
+  &__status {
+    width: max-content;
+    padding: 0.4rem 0.8rem;
+    background-color: $color-primary;
+    color: white;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    border-radius: 100px;
+  }
+
+  &__contact {
+    background-color: $color-grey-dark-1;
+    color: white;
+    padding: 1rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.feature-box {
+  display: grid;
+  place-content: center;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 2rem;
+}
+
+.btn--back {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  background-color: $color-tertiary-dark;
+  color: white;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  &-modifier {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    padding: 1rem 2rem;
+  }
+}
