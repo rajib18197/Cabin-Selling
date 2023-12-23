@@ -6,6 +6,11 @@
   overflow-y: scroll;
   background-color: #f0eeee;
   padding: 1rem 0;
+  grid-area: recipe;
+
+  @media only screen and (max-width: $bp-large) {
+    overflow-y: visible;
+  }
 }
 
 .cabin {
@@ -22,6 +27,10 @@
     0 0 3rem rgba(76, 103, 150, 0.3);
   border-radius: 3px;
   padding: 2rem;
+
+  @media only screen and (max-width: $bp-smallest) {
+    grid-template-columns: 10rem 1fr 1fr;
+  }
 
   &__capacity,
   &__price,
@@ -86,6 +95,11 @@
   gap: 1rem;
   grid-column: 3 / -1;
   grid-row: 2;
+
+  @media only screen and (max-width: $bp-smallest) {
+    grid-column: 3 / -1;
+    grid-row: 3;
+  }
 }
 
 .cabin__btn,

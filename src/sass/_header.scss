@@ -11,6 +11,21 @@
     height: 4.6rem;
     display: block;
   }
+
+  @media only screen and (max-width: $bp-medium) {
+    display: grid;
+    grid-template-columns: max-content auto;
+    gap: 2rem;
+    padding: 1rem;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    grid-template-columns: 1fr;
+    width: none;
+    &::placeholder {
+      color: white;
+    }
+  }
 }
 
 .search {
@@ -59,7 +74,7 @@
     }
 
     @media only screen and (max-width: $bp-medium) {
-      width: auto;
+      width: 100%;
 
       &::placeholder {
         color: white;

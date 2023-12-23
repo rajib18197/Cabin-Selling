@@ -107,28 +107,28 @@ class CabinDetails {
     console.log(id);
 
     return `
-      <figure class="recipe__fig">
+      <figure class="cabin__fig">
         <button class="btn--back btn--back-modifier">Back To Home</button>
-        <img src="${image}" alt="Tomato" class="recipe__img" />
-        <h1 class="recipe__title">
+        <img src="${image}" alt="Tomato" class="cabin__img" />
+        <h1 class="cabin__title">
           <span>${name}</span>
         </h1>
       </figure>
-      <div class="recipe__details">
-        <div class="recipe__info">
-          <svg class="recipe__info-icon">
+      <div class="cabin__details">
+        <div class="cabin__info">
+          <svg class="cabin__info-icon">
             <use href="src/img/icons.svg#icon-clock"></use>
           </svg>
-          <span class="recipe__info-data recipe__info-data--minutes">${maxCapacity}</span>
-          <span class="recipe__info-text">Capacity</span>
+          <span class="cabin__info-data cabin__info-data--minutes">${maxCapacity}</span>
+          <span class="cabin__info-text">Capacity</span>
         </div>
-        <div class="recipe__info">
-          <svg class="recipe__info-icon">
+        <div class="cabin__info">
+          <svg class="cabin__info-icon">
             <use href="src/img/icons.svg#icon-users"></use>
           </svg>
-          <span class="recipe__info-data recipe__info-data--people">${guests}</span>
-          <span class="recipe__info-text">Guest</span>
-          <div class="recipe__info-buttons">
+          <span class="cabin__info-data cabin__info-data--people">${guests}</span>
+          <span class="cabin__info-text">Guest</span>
+          <div class="cabin__info-buttons">
             <button class="btn--tiny btn--update-guests" data-update-to=${
               guests - 1
             } data-max-capacity=${maxCapacity}>
@@ -145,7 +145,7 @@ class CabinDetails {
             </button>
           </div>
         </div>
-        <div class="recipe__user-generated">
+        <div class="cabin__user-generated">
           <svg>
             <use href="src/img/icons.svg#icon-user"></use>
           </svg>
@@ -158,21 +158,15 @@ class CabinDetails {
           </svg>
         </button>
       </div>
-      <div class="recipe__ingredients">
-        <h2 class="heading--2">Recipe ingredients</h2>
-        <ul class="recipe__ingredient-list">
+      <div class="cabin__ingredients">
+        <h2 class="heading--2">Cabin facilities</h2>
+        <ul class="cabin__ingredient-list">
           ${facilities.map(this._generateMarkupFacilities).join("")}
         </ul>
       </div>
-      <div class="recipe__directions">
-        <h2 class="heading--2">How to cook it</h2>
-        <p class="recipe__directions-text">
-          This recipe was carefully designed and tested by
-          <span class="recipe__publisher">The Pioneer Woman</span>. Please check out
-          directions at their website.
-        </p>
+      <div class="cabin__directions">
         <button
-          class="btn--small recipe__btn cabin--book" data-cabin=${id}
+          class="btn--small cabin__btn cabin--book" data-cabin=${id}
         >
           <span>Book Now</span>
           <svg class="search__icon">
@@ -185,8 +179,8 @@ class CabinDetails {
 
   _generateMarkupFacilities(benefit) {
     return `
-      <li class="recipe__ingredient">
-        <svg class="recipe__icon">
+      <li class="cabin__ingredient">
+        <svg class="cabin__icon">
           <use href="src/img/icons.svg#icon-check"></use>
         </svg>
        ${
@@ -194,7 +188,7 @@ class CabinDetails {
            ? `<span class="quantity">${benefit.quantity}</span>`
            : ""
        }
-        <div class="recipe__description">
+        <div class="cabin__description">
           ${" "}${benefit.description}
         </div>
       </li>

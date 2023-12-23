@@ -28,9 +28,9 @@ $shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.06);
 $line: 1px solid var(--color-grey-light-2);
 
 $bp-large: 78.15em; // 1250px
-$bp-medium: 61.25em; // 980px
-$bp-small: 37.5em; // 600px
-$bp-smallest: 31.25em; // 500px
+$bp-medium: 65em; // 1040px
+$bp-small: 44em; // 704px
+$bp-smallest: 36.25em; // 580px
 
 * {
   margin: 0;
@@ -64,6 +64,11 @@ body {
   height: 100vh;
 }
 
+.logo {
+  text-transform: uppercase;
+  margin-left: 2rem;
+  font-size: 1.9rem;
+}
 .container {
   height: 100%;
   background-color: #fff;
@@ -77,9 +82,16 @@ body {
     "list recipe";
 
   @media only screen and (max-width: $bp-large) {
-    // max-width: 100%;
+    grid-template-areas:
+      "head head"
+      "list list"
+      "recipe recipe";
     margin: 0;
     border-radius: 0;
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    grid-template-rows: auto 1fr;
   }
 }
 

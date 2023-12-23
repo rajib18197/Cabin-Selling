@@ -2,11 +2,15 @@
   display: flex;
   flex-direction: column;
   background-color: $color-tertiary-dark;
+  background-color: #fff;
   gap: 2.2rem;
   padding: 0.6rem;
 
+  grid-area: list;
+
   &__result {
     font-size: 1.5rem;
+    color: #101d28;
   }
 
   &__actions {
@@ -14,6 +18,11 @@
     justify-content: space-between;
     align-items: center;
     color: $color-grey-light-2;
+
+    // @media only screen and (max-width: $bp-small) {
+    //   display: grid;
+    //   grid-template-columns: 1fr 1fr ;
+    // }
   }
 
   &__count {
@@ -73,7 +82,7 @@
     text-transform: uppercase;
     width: max-content;
     // background-color: #bb76e4;
-    color: white;
+    color: rgb(32, 27, 27);
     font-size: 1.3rem;
     font-weight: 600;
     line-height: normal;
@@ -93,6 +102,9 @@
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       gap: 0.6rem;
+      @media only screen and (max-width: $bp-small) {
+        grid-template-columns: 1fr 1fr;
+      }
     }
     &--btn {
       width: 100%;
@@ -149,6 +161,11 @@
     &--btns {
       display: flex;
       gap: 0.6rem;
+
+      @media only screen and (max-width: $bp-small) {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
     }
 
     &--btn {
@@ -171,7 +188,7 @@
 
   &__price-range {
     font-size: 1.5rem;
-    color: white;
+    color: rgb(34, 26, 26);
 
     &--container {
       display: flex;
@@ -194,7 +211,7 @@
   width: 100%;
   background-color: $color-secondary-light;
   background-color: transparent;
-  color: white;
+  color: rgb(58, 37, 37);
   cursor: pointer;
 
   &::-webkit-slider-runnable-track {
@@ -278,14 +295,18 @@
 
     & button {
       display: inline-block;
-      padding: 1rem 2rem;
+      padding: 1rem 3rem;
+      font-size: 1.6rem;
       background-color: $color-tertiary-dark;
       color: white;
       border: none;
-      border-radius: 1px;
-      outline: 2px solid #101d28;
+      border-radius: 3px;
+      // outline: 2px solid #101d28;
       outline-offset: 2px;
       cursor: pointer;
+    }
+    .btn--proceed {
+      background-color: #101d28;
     }
   }
 }
