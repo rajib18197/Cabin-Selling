@@ -49,7 +49,13 @@ const persistRating = function () {
 };
 
 export const addRating = function (cabin, rate) {
-  state.ratedCabins.push(cabin);
+  const cabinToRate = state.ratedCabins.find((el) => el.id === cabin.id);
+  if (cabinToRate) {
+    cabinToRate.rating = rate;
+  } else {
+    state.ratedCabins.push(cabin);
+  }
+
   if (state.cabinDetails.id === cabin.id) cabin.rating = rate;
 
   persistRating();
