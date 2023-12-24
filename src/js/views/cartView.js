@@ -31,27 +31,37 @@ class CartView {
     }
   }
 
+  addHandleCloseSucces(handler) {
+    this._addRecipeWindow.addEventListener("click", function (e) {
+      console.log(e.target);
+      if (e.target.closest(".btn--ok")) {
+        handler();
+      }
+    });
+  }
+
   renderSuccess(msg = this._successMsg) {
     const markup = `
       <div class="success">
         <div>
           <svg>
-            <use href="src/img/icons.svg#icon-alert-triangle"></use>
+            <use href="img/icons.svg#icon-smile"></use>
           </svg>
         </div>
-        <p>${msg}</p>
+        <p>Your order was completed successfully. Order Id: ${msg} for further lookup.</p>
+        <button class="btn--ok">Proceed</button>
       </div>
   `;
 
     this._cartContainer.classList.add("hidden");
     this._bookElement.classList.add("hidden");
-    this._addRecipeWindow.insertAdjacentHTML("beforeend", markup);
+    this._addRecipeWindow.insertAdjacentHTML("afterbegin", markup);
 
-    setTimeout(() => {
-      this._addRecipeWindow.querySelector(".success").style.display = "none";
-      this._addRecipeWindow.classList.add("hidden");
-      this._overlay.classList.add("hidden");
-    }, 2000);
+    // setTimeout(() => {
+    //   this._addRecipeWindow.querySelector(".success").style.display = "none";
+    //   this._addRecipeWindow.classList.add("hidden");
+    //   this._overlay.classList.add("hidden");
+    // }, 2000);
   }
 
   _updateCartMarkup() {

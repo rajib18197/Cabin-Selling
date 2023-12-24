@@ -28,6 +28,7 @@ export const state = {
   ratedCabins: [],
 
   orderedCabin: {},
+  orderId: null,
 };
 
 const init = function () {
@@ -150,6 +151,7 @@ export const bookCabin = async function ({ fullName, email, address }) {
 
   const newOrderInfo = await bookNewCabin(...order);
   console.log(newOrderInfo);
+  state.orderId = newOrderInfo[0].id;
   state.cart.results = [];
 };
 

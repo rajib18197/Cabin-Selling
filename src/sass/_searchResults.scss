@@ -384,3 +384,16 @@
   cursor: pointer;
   // position: relative;
 }
+
+.btn--ok {
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.6rem;
+  background-color: $color-tertiary-dark;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  // outline: 2px solid #101d28;
+  outline-offset: 2px;
+  cursor: pointer;
+}

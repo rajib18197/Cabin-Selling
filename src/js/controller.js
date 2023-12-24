@@ -94,6 +94,13 @@ const controlOrder = async function ({ fullName, email, address }) {
   cartView.renderSpinner();
 
   await model.bookCabin({ fullName, email, address });
+  // cartView.closeModal();
+  cartView.renderSuccess(model.state.orderId);
+  cartView.render(model.state.cart);
+  cabinsView.render(model.state);
+};
+
+const controlClearModal = function () {
   cartView.closeModal();
   cartView.render(model.state.cart);
   cabinsView.render(model.state);
@@ -175,6 +182,7 @@ const init = function () {
 
   cartView.addHandlerDeleteCabin(controlDeleteCabinFromCart);
   cartView.addHandlerOrder(controlOrder);
+  cartView.addHandleCloseSucces(controlClearModal);
 };
 
 init();
