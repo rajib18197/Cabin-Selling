@@ -1,5 +1,3 @@
-import icons from "../../img/icons.svg";
-
 class BookedCabinView {
   _parentElement = document.querySelector(".cabins");
   _data;
@@ -29,7 +27,7 @@ class BookedCabinView {
     const markup = `
       <div class="spinner">
         <svg>
-          <use href="${icons}#icon-loader"></use>
+          <use href="img/icons#icon-loader"></use>
         </svg>
       </div>
     `;

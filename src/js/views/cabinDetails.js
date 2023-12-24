@@ -1,5 +1,3 @@
-import icons from "../../img/icons.svg";
-
 class CabinDetails {
   _parentElement = document.querySelector(".cabins");
   _data;
@@ -95,7 +93,7 @@ class CabinDetails {
     const markup = `
       <div class="spinner">
         <svg>
-          <use href="${icons}#icon-loader"></use>
+          <use href="img/icons.svg#icon-loader"></use>
         </svg>
       </div>
     `;
@@ -136,14 +134,14 @@ class CabinDetails {
       <div class="cabin__details">
         <div class="cabin__info">
           <svg class="cabin__info-icon">
-            <use href="src/img/icons.svg#icon-clock"></use>
+            <use href="img/icons.svg#icon-users"></use>
           </svg>
           <span class="cabin__info-data cabin__info-data--minutes">${maxCapacity}</span>
           <span class="cabin__info-text">Capacity</span>
         </div>
         <div class="cabin__info">
           <svg class="cabin__info-icon">
-            <use href="src/img/icons.svg#icon-users"></use>
+            <use href="img/icons.svg#icon-users"></use>
           </svg>
           <span class="cabin__info-data cabin__info-data--people">${guests}</span>
           <span class="cabin__info-text">Guest</span>
@@ -152,14 +150,14 @@ class CabinDetails {
               guests - 1
             } data-max-capacity=${maxCapacity}>
               <svg>
-                <use href="src/img/icons.svg#icon-minus-circle"></use>
+                <use href="img/icons.svg#icon-minus-circle"></use>
               </svg>
             </button>
             <button class="btn--tiny btn--update-guests" data-update-to=${
               guests + 1
             } data-max-capacity=${maxCapacity}>
               <svg>
-                <use href="src/img/icons.svg#icon-plus-circle"></use>
+                <use href="img/icons.svg#icon-plus-circle"></use>
               </svg>
             </button>
           </div>
@@ -170,7 +168,7 @@ class CabinDetails {
              (_, i) => `
            <button class="btn--star" data-star=${i + 1}>
              <svg>
-               <use href="src/img/icons.svg#icon-star${
+               <use href="img/icons.svg#icon-star${
                  rating !== 0 && rating >= i + 1 ? "_rate" : "_outline"
                }"></use>
              </svg>
@@ -180,7 +178,7 @@ class CabinDetails {
         </div>
         <button class="btn--round btn--bookmark">
           <svg class="">
-            <use href="src/img/icons.svg#icon-bookmark${
+            <use href="img/icons.svg#icon-bookmark${
               bookmarked ? "-fill" : ""
             }"></use>
           </svg>
@@ -198,7 +196,7 @@ class CabinDetails {
         >
           <span>Book Now</span>
           <svg class="search__icon">
-            <use href="src/img/icons.svg#icon-arrow-right"></use>
+            <use href="img/icons.svg#icon-arrow-right"></use>
           </svg>
         </button>
       </div>
@@ -209,7 +207,7 @@ class CabinDetails {
     return `
       <li class="cabin__ingredient">
         <svg class="cabin__icon">
-          <use href="src/img/icons.svg#icon-check"></use>
+          <use href="img/icons.svg#icon-check"></use>
         </svg>
        ${
          benefit.quantity

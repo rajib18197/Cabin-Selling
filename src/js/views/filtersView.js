@@ -6,7 +6,7 @@ import {
   sortByNumber,
 } from "../utils/helpers";
 import View from "./view";
-import icons from "../../img/icons.svg";
+// import icons from "./img/icons.svg";
 
 class FiltersView extends View {
   _parentElement = document.querySelector(".filters");
@@ -48,7 +48,7 @@ class FiltersView extends View {
     const markup = `
       <div class="spinner">
         <svg>
-          <use href="${icons}#icon-loader"></use>
+          <use href="img/icons.svg#icon-loader"></use>
         </svg>
       </div>
     `;

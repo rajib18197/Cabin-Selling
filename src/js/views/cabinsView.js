@@ -1,5 +1,4 @@
 import View from "./view";
-import icons from "../../img/icons.svg";
 
 class CabinsView extends View {
   _parentElement = document.querySelector(".cabins");
@@ -17,7 +16,7 @@ class CabinsView extends View {
     const markup = `
       <div class="spinner">
         <svg>
-          <use href="${icons}#icon-loader"></use>
+          <use href="img/icons.svg#icon-loader"></use>
         </svg>
       </div>
     `;

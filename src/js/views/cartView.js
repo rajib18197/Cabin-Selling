@@ -1,5 +1,3 @@
-import icons from "../../img/icons.svg";
-
 class CartView {
   _overlay = document.querySelector(".overlay");
   _addRecipeWindow = document.querySelector(".create-order-window");
