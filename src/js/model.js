@@ -25,19 +25,33 @@ export const state = {
   },
 
   bookmarks: [],
+  ratedCabins: [],
 
   orderedCabin: {},
 };
 
 const init = function () {
-  const storage = localStorage.getItem("bookmarked-cabins");
+  const bookmarkStorage = localStorage.getItem("bookmarked-cabins");
+  const ratedStorage = localStorage.getItem("rated-cabins");
 
-  if (!storage) return;
+  if (!bookmarkStorage && !ratedStorage) return;
 
-  state.bookmarks = [...JSON.parse(storage)];
+  state.bookmarks = [...JSON.parse(bookmarkStorage)];
+  state.ratedCabins = [...JSON.parse(ratedStorage)];
   console.log(state.bookmarks);
 };
 init();
+
+const persistRating = function () {
+  localStorage.setItem("rated-cabins", JSON.stringify(state.ratedCabins));
+};
+
+export const addRating = function (cabin, rate) {
+  state.ratedCabins.push(cabin);
+  if (state.cabinDetails.id === cabin.id) cabin.rating = rate;
+
+  persistRating();
+};
 
 export const loadOrderedCabin = async function (id) {
   const data = await getOrderedCabin(id);
@@ -105,6 +119,10 @@ export const loadCabinDetails = async function (id) {
     bookmarked: state.bookmarks.find((book) => book.id === data.id)
       ? true
       : false,
+
+    rating: state.ratedCabins.find((cabin) => cabin.id === data.id)
+      ? state.ratedCabins.find((cabin) => cabin.id === data.id).rating
+      : 0,
   };
   console.log(cabinDetailsData);
   state.cabinDetails = cabinDetailsData;

@@ -3,6 +3,8 @@ import icons from "../../img/icons.svg";
 class CabinDetails {
   _parentElement = document.querySelector(".cabins");
   _data;
+  _starLength = 5;
+  _curRating = 0;
 
   render(data) {
     this._data = data;
@@ -101,10 +103,28 @@ class CabinDetails {
     this._parentElement.insertAdjacentHTML("afterbegin", markup);
   }
 
+  addHandlerRating(handler) {
+    this._parentElement.addEventListener("click", function (e) {
+      // console.log(e.target);
+      if (!e.target.closest(".btn--star")) return;
+      const target = Number(e.target.closest(".btn--star").dataset.star);
+      console.log(target);
+      handler(target);
+    });
+  }
+
   generateMarkup() {
-    const { id, image, name, facilities, maxCapacity, guests, bookmarked } =
-      this._data;
-    console.log(id);
+    const {
+      id,
+      image,
+      name,
+      facilities,
+      maxCapacity,
+      guests,
+      bookmarked,
+      rating,
+    } = this._data;
+    console.log(id, rating);
 
     return `
       <figure class="cabin__fig">
@@ -146,9 +166,18 @@ class CabinDetails {
           </div>
         </div>
         <div class="cabin__user-generated">
-          <svg>
-            <use href="src/img/icons.svg#icon-user"></use>
-          </svg>
+           ${Array.from(
+             { length: this._starLength },
+             (_, i) => `
+           <button class="btn--star" data-star=${i + 1}>
+             <svg>
+               <use href="src/img/icons.svg#icon-star${
+                 rating !== 0 && rating >= i + 1 ? "_rate" : "_outline"
+               }"></use>
+             </svg>
+           </button>
+          `
+           ).join("")}
         </div>
         <button class="btn--round btn--bookmark">
           <svg class="">

@@ -144,9 +144,16 @@ const controlBackToHome = function () {
   cabinsView.render(model.state);
 };
 
+const controlRating = function (rate) {
+  model.addRating(model.state.cabinDetails, rate);
+  cabinDetails.update(model.state.cabinDetails);
+};
+
 const init = function () {
   controlCabins();
   bookmarkedCabins();
+  cabinDetails.addHandlerRating(controlRating);
+
   bookedCabinView.addHandlerBackToHome(controlBackToHome);
   cabinDetails.addHandlerBackToHome(controlBackToHome);
 
