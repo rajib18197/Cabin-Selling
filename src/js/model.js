@@ -34,11 +34,13 @@ const init = function () {
   const bookmarkStorage = localStorage.getItem("bookmarked-cabins");
   const ratedStorage = localStorage.getItem("rated-cabins");
 
-  if (!bookmarkStorage && !ratedStorage) return;
+  if (bookmarkStorage) {
+    state.bookmarks = [...JSON.parse(bookmarkStorage)];
+  }
 
-  state.bookmarks = [...JSON.parse(bookmarkStorage)];
-  state.ratedCabins = [...JSON.parse(ratedStorage)];
-  console.log(state.bookmarks);
+  if (ratedStorage) {
+    state.ratedCabins = [...JSON.parse(ratedStorage)];
+  }
 };
 init();
 
