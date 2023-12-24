@@ -10,13 +10,19 @@ class BookMarkView {
   }
 
   _generateMarkup() {
-    return `${this._data.map(this._generateMarkupPreview)}`;
+    return `${this._data.bookmarks.map(
+      this._generateMarkupPreview.bind(this)
+    )}`;
   }
 
   _generateMarkupPreview(preview) {
     const { id, name, image } = preview;
     const selectedId = window.location.hash.slice(1);
     console.log(id, selectedId);
+    const ratedPreview = this._data.ratedCabins.find(
+      (book) => book.id === preview.id
+    );
+    console.log(ratedPreview);
 
     return `
             <li class="preview">
@@ -32,7 +38,11 @@ class BookMarkView {
                     <h4 class="preview__name">
                     ${name}
                     </h4>
-                    <p class="preview__publisher">The Pioneer Woman</p>
+                    <p class="preview__publisher">${
+                      ratedPreview
+                        ? `You rated this ${ratedPreview.rating} stars`
+                        : "You haven't rated this yet!"
+                    }</p>
                 </div>
                 </a>
             </li>

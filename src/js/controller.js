@@ -124,11 +124,11 @@ const controlBookMark = function () {
   }
 
   cabinDetails.update(model.state.cabinDetails);
-  bookmarkView.render(model.state.bookmarks);
+  bookmarkView.render(model.state);
 };
 
 const bookmarkedCabins = function () {
-  bookmarkView.render(model.state.bookmarks);
+  bookmarkView.render(model.state);
 };
 
 const controlSearch = async function () {
