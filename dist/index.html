@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="/assets/favicon-5ee87bae.png" type="image/x-icon" />
+
+    
+    <!-- <script type="module" src="src/js/controller.js"></script> -->
+    
+
+    <title>LoyaList JS</title>
+    <script type="module" crossorigin src="/assets/index-4f0cb04c.js"></script>
+    <link rel="stylesheet" href="/assets/index-137663a9.css">
+  </head>
+
+  <body>
+    <div class="container">
+      <header class="header">
+        <h2 class="logo">LoyaList JS</h2>
+        <form class="search">
+          <input
+            type="text"
+            class="search__field"
+            placeholder="Search Your Booked Cabin"
+          />
+          <button class="btn search__btn">
+            <svg class="search__icon">
+              <use href="/assets/icons-84babf4b.svg#icon-search"></use>
+            </svg>
+            <span>Search</span>
+          </button>
+        </form>
+
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <button class="nav__btn nav__btn--cart">
+                <svg class="nav__icon">
+                  <use href="/assets/icons-84babf4b.svg#icon-shopping-bag"></use>
+                </svg>
+                <span class="guest-number">Your Cart</span>
+              </button>
+            </li>
+            <li class="nav__item">
+              <button class="nav__btn nav__btn--bookmarks">
+                <svg class="nav__icon">
+                  <use href="/assets/icons-84babf4b.svg#icon-bookmark"></use>
+                </svg>
+                <span>Bookmarks</span>
+              </button>
+              <div class="bookmarks">
+                <ul class="bookmarks__list">
+                  <div class="message">
+                    <div>
+                      <svg>
+                        <use href="/assets/icons-84babf4b.svg#icon-smile"></use>
+                      </svg>
+                    </div>
+                    <p>
+                      No bookmarks yet. Find a nice recipe and bookmark it :)
+                    </p>
+                  </div>
+
+                  <!-- <li class="preview">
+                    <a class="preview__link" href="#23456">
+                      <figure class="preview__fig">
+                        <img src="src/img/test-1.jpg" alt="Test" />
+                      </figure>
+                      <div class="preview__data">
+                        <h4 class="preview__name">
+                          Pasta with Tomato Cream ...
+                        </h4>
+                        <p class="preview__publisher">The Pioneer Woman</p>
+                      </div>
+                    </a>
+                  </li> -->
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <div class="filters">
+        <!-- <div class="filters__container filters__discount">
+          <div class="filters__discount--btns">
+            <button class="filters__discount--btn">All</button>
+            <button class="filters__discount--btn">with discount</button>
+            <button class="filters__discount--btn">No discount</button>
+          </div>
+        </div> -->
+
+        <!-- <div class="filters__container filters__country">
+          <div class="filters__label">
+            <h3 class="heading--3">Country</h3>
+          </div>
+          <div class="filters__country--btns">
+            <button class="filters__country--btn">All</button>
+            <button class="filters__country--btn">Germany</button>
+            <button class="filters__country--btn">Austria</button>
+            <button class="filters__country--btn">Austria</button>
+            <button class="filters__country--btn">Austria</button>
+            <button class="filters__country--btn">Austria</button>
+            <button class="filters__country--btn">Austria</button>
+          </div>
+        </div> -->
+
+        <!-- <div class="filters__container filters__capacity">
+          <div class="filters__label">
+            <h3 class="heading--3">Max Capacity</h3>
+          </div>
+          <div class="filters__capacity--btns">
+            <button class="filters__capacity--btn">All</button>
+            <button class="filters__capacity--btn">2</button>
+            <button class="filters__capacity--btn">3</button>
+            <button class="filters__capacity--btn">4</button>
+            <button class="filters__capacity--btn">6</button>
+            <button class="filters__capacity--btn">8</button>
+            <button class="filters__capacity--btn">10</button>
+          </div>
+        </div> -->
+
+        <!-- <div class="filters__container filters__price-range">
+          <div class="filters__label">
+            <h3 class="heading--3">Price Range</h3>
+          </div>
+
+          <div class="filters__price-range--container">
+            <input
+              type="range"
+              name=""
+              id=""
+              min="250"
+              max="2000"
+              value="600"
+              class="range"
+            />
+          </div>
+        </div> -->
+
+        <!-- <div class="pagination">
+          <button class="btn--inline pagination__btn--prev">
+            <svg class="search__icon">
+              <use href="src/img/icons.svg#icon-arrow-left"></use>
+            </svg>
+            <span>Page 1</span>
+          </button>
+          <button class="btn--inline pagination__btn--next">
+            <span>Page 3</span>
+            <svg class="search__icon">
+              <use href="src/img/icons.svg#icon-arrow-right"></use>
+            </svg>
+          </button>
+        </div> -->
+      </div>
+
+      <div class="cabins">
+        <!-- <div class="message">
+          <div>
+            <svg>
+              <use href="src/img/icons.svg#icon-smile"></use>
+            </svg>
+          </div>
+          <p>Have fun!</p>
+        </div> -->
+
+        <!-- <div class="spinner">
+          <svg>
+            <use href="src/img/icons.svg#icon-loader"></use>
+          </svg>
+        </div> -->
+
+        <!-- <div class="error">
+            <div>
+              <svg>
+                <use href="src/img/icons.svg#icon-alert-triangle"></use>
+              </svg>
+            </div>
+            <p>No recipes found for your query. Please try again!</p>
+          </div> -->
+      </div>
+    </div>
+
+    <div class="overlay hidden"></div>
+    <div class="create-order-window hidden">
+      <button class="btn--close-modal">&times;</button>
+      <div class="cart"></div>
+
+      <div class="book hidden">
+        <form action="#" class="form">
+          <div class="form__group">
+            <label for="full-name" class="form__label">Full Name</label>
+            <input
+              type="text"
+              class="form__input form__input-name"
+              id="full-name"
+            />
+          </div>
+
+          <div class="form__group">
+            <label for="email" class="form__label">E-mail</label>
+            <input
+              type="email"
+              class="form__input form__input-email"
+              id="email"
+            />
+          </div>
+
+          <div class="form__group form__group--address">
+            <label for="address" class="form__label">Address</label>
+            <div class="form__address">
+              <input
+                type="text"
+                class="form__input form__input-address"
+                id="address"
+              />
+              <button class="btn-user form__address--btn">Get address</button>
+            </div>
+          </div>
+          <button class="btn-user btn--order-up">Order from $1200</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
