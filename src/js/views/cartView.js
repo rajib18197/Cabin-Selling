@@ -48,8 +48,8 @@ class CartView {
             <use href="img/icons.svg#icon-smile"></use>
           </svg>
         </div>
-        <p>Your order was completed successfully. Order Id: ${msg} for further lookup.</p>
-        <button class="btn--ok">Proceed</button>
+        <p>Your order was completed successfully. Your Order Id is ${msg} for further lookup.</p>
+        <button class="btn--ok">Okay</button>
       </div>
   `;
 
